@@ -42,7 +42,7 @@ define rbenv::plugin(
     command => 'git pull',
     user    => $user,
     group   => $group,
-    path    => ['/usr/bin', '/usr/sbin'],
+    path    => ['/usr/bin', '/usr/sbin', '/bin'],
     timeout => $timeout,
     cwd     => $destination,
     require => Exec["rbenv::plugin::checkout ${user} ${plugin_name}"],
